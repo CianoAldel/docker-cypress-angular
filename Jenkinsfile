@@ -6,9 +6,11 @@ pipeline {
                 checkout scm
             }
         }
-        stage('cypress test') {
+        stage('Install dependencies && cypress test') {
             steps {
-                echo 'test docker-cypress-angular project'
+                sh 'npm install'
+                sh 'npm test'
+                echo 'test docker-cypress-angular project success'
             }
         }
         stage('build') {
