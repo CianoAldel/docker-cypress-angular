@@ -1,10 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('git pull') {
+        stage('Checkout') {
             steps {
-                git credentialsId: 'global-key', url: 'https://github.com/CianoAldel/docker-cypress-angular.git', branch: 'main',
-                echo 'you checkout success'
+                checkout scm
             }
         }
         stage('cypress test') {
