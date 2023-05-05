@@ -4,17 +4,17 @@ pipeline {
     nodejs 'NodeJs 16.18.0'
   }
     stages {
-        stage('Checkout') {
+        stage('Git pull') {
             steps {
                 checkout scm
             }
         }
-        stage('Install dependencies && cypress test') {
+        stage('Install dependencies') {
             steps {
                 sh 'npm install
             }
         }
-        stage('cypress test'){
+        stage('Cypress test'){
           steps {
               sh 'npm run test'
               echo 'test docker-cypress-angular project success'
