@@ -12,7 +12,7 @@ pipeline {
         stage('Install dependencies && cypress test') {
             steps {
                 sh 'npm version'
-                sh 'npm install'
+                sh 'npm install cypress'
                 sh 'npm test'
                 echo 'test docker-cypress-angular project success'
             }
