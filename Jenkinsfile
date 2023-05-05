@@ -11,11 +11,15 @@ pipeline {
         }
         stage('Install dependencies && cypress test') {
             steps {
-                sh 'npm version'
+                sh 'apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb'
                 sh 'npm install && npm install cypress --save-dev'
-                sh 'npm test'
-                echo 'test docker-cypress-angular project success'
             }
+        }
+        stage('cypress test'){
+          steps {
+              sh 'npm test'
+              echo 'test docker-cypress-angular project success'
+          }
         }
         stage('build') {
             steps {
