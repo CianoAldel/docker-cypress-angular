@@ -23,9 +23,7 @@ pipeline {
         }
         stage('Build and start containers') {
             steps {
-                sh 'docker-compose --version'
-                sh 'docker-compose up -d'
-                echo 'deploy success'
+                sh 'docker --version'
             }
         }
     }
