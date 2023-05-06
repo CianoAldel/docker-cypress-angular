@@ -23,8 +23,8 @@ pipeline {
         }
         stage('Build and start containers') {
             steps {
-                sh 'docker compose version'
-                sh 'docker compose up -d'
+                sh 'docker-compose version'
+                sh 'docker-compose up -d'
             }
         }
     }
