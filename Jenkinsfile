@@ -21,14 +21,10 @@ pipeline {
               echo 'test docker-cypress-angular project success'
           }
         }
-        stage('Build') {
+        stage('Build and start containers') {
             steps {
-                echo 'build docker-cypress-angular project'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'build docker-cypress-angular  project'
+                sh 'docker-compose up -d'
+                echo 'deploy success'
             }
         }
     }
