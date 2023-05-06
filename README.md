@@ -11,6 +11,10 @@ npx cypress open
 
 docker exec -it --user root 87b872492144 /bin/bash
 
+# install docker compose linux
+
+https://docs.docker.com/compose/install/linux/
+
 # command for linux install dependencies cypress and docker
 
 sudo apt update
