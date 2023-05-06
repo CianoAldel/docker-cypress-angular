@@ -1,10 +1,9 @@
 # BASE IMAGE
-
 FROM node:alpine AS build
 WORKDIR /build
 COPY ./package.json ./
 RUN npm install
-COPY ./ ./
+COPY . .
 RUN npm run build
 ### STAGE 2: Run ###
 FROM nginx:1.17.1-alpine
